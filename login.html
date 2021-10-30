@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Outbreak</title>
+    <!-- Url Imports -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- File Imports -->
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
+        body {
+            background: black url("./images/Background_Login.jpg") no-repeat fixed center;
+        }
+
+        h1 {
+            font-family: 'Monoton', cursive !important;
+            font-weight: lighter !important;
+        }
+
+        p {
+            font-family: 'Katibeh', cursive !important;
+        }
+
+        input {
+            background-color: rgba(107, 107, 107, 0.589) !important;
+        }
+
+        a {
+            color: darkgray !important;
+        }
+
+        button {
+            font-family: 'Train One', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-dark text-white">
+        <div class="container">
+            <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="home.html" class="pl-md-0 p-3 text-decoration-none text-light">
+                            <h3 class="bold color_white">Outbreak</h3>
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="home.html" class="p-3 text-decoration-none text-light bold">Home</a>
+                        <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
+                        <a href="hackerboard.php" class="p-3 text-decoration-none text-light bold">Scoreboard</a>
+                        <a href="login.html" class="p-3 text-decoration-none text-white bold">Login</a>
+                        <a href="register.html" class="p-3 text-decoration-none text-light bold">Register</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="display-1 bold color_white content__title">Outbreak<span class="vim-caret">&nbsp;</span>
+                </h1>
+                <p class="text-grey text-spacey hackerFont lead mb-5">
+                    To conquer the world, enter your credentials.
+                </p>
+                <div class="row hackerFont">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="user_name" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <small id="passHelp" class="form-text text-muted">Let sure that there is no
+                                one behind
+                                you</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="btn btn-outline-light btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left typewriter" onclick="login()">
+                    <h4>Login</h4>
+                </button>
+                <small id="registerHelp" class="mt-3 form-text text-muted">Not Registered? <a href="#">Register
+                        here</a></small>
+            </div>
+        </div>
+        <script>
+            function login() {
+                var username = document.getElementById('user_name').value;
+                var password = document.getElementById('password').value;
+                if ( username === '' || password === '') {
+                    alert('Please enter First name, Last name, Username and Password');
+                } else {
+                    $.ajax({
+                        url: "http://localhost/New_Dashboard/php/login.php",
+                        type: "POST",
+                        dataType: "Text",
+                        data: { "username": username, "password": password },
+                        success: function (data) {
+                            response = JSON.parse(data).username
+                            if (response != undefined || response != "" || response.length > 0 ) {
+                                localStorage.setItem("ctf-username", username);
+                                window.location.href = "./Challenges.html";
+                            } else {
+                                alert(data);
+                            }
+                        }
+                    });
+                }
+            }
+        </script>
+        
+        <!-- Bootstrap JS -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

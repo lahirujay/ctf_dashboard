@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Outbreak</title>
+    <!-- Url Imports -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- File Imports -->
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
+        body {
+            background: black url("./images/Background_Login.jpg") no-repeat fixed center;
+        }
+
+        h1 {
+            font-family: 'Monoton', cursive !important;
+            font-weight: lighter !important;
+        }
+
+        p {
+            font-family: 'Katibeh', cursive !important;
+        }
+
+        input {
+            background-color: rgba(107, 107, 107, 0.589) !important;
+        }
+
+        a {
+            color: darkgray !important;
+        }
+
+        button {
+            font-family: 'Train One', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-dark text-white">
+        <div class="container">
+            <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="home.html" class="pl-md-0 p-3 text-decoration-none text-light">
+                            <h3 class="bold color_white">Outbreak</h3>
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="home.html" class="p-3 text-decoration-none text-light bold">Home</a>
+                        <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
+                        <a href="hackerboard.php" class="p-3 text-decoration-none text-light bold">Scoreboard</a>
+                        <a href="login.html" class="p-3 text-decoration-none text-light bold">Login</a>
+                        <a href="register.html" class="p-3 text-decoration-none text-white bold">Register</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10">
+                    <h1 class="display-1 bold color_white content__title">Outbreak<span
+                            class="vim-caret">&nbsp;</span></h1>
+                    <p class="text-grey text-spacey hackerFont lead mb-5">
+                        Join us to help the perpetrator
+                    </p>
+                    <div class="row  hackerFont">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="first_name" placeholder="First Name" name="firstName">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="lastName">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="user_name" placeholder="User name" name="username">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <button id="submit_p1"
+                                        class="btn btn-outline-light btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left typewriter"
+                                        onclick="saveData()">
+                                        <h4>Register</h4>
+                                    </button>
+                                    <small id="registerHelp" class="mt-2 form-text text-muted">Already Registered? <a
+                                            href="login.html">Login here</a></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        function saveData() {
+                            var first_name = document.getElementById('first_name').value;
+                            var last_name = document.getElementById('last_name').value;
+                            var username = document.getElementById('user_name').value;
+                            var email = document.getElementById('email').value;
+                            var password = document.getElementById('password').value;
+                            if (first_name === '' || last_name === '' || username === '' || password === '') {
+                                alert('Please enter First name, Last name, Username and Password');
+                            } else {
+                                $.ajax({
+                                    url: "http://localhost/New_Dashboard/php/registration.php",
+                                    type: "POST",
+                                    dataType: "Text",
+                                    data: { "username": username, "firstName": first_name, "lastName": last_name, "email": email, "password": password },
+                                    success: function (data) {
+                                        
+                                        response = JSON.parse(data).username
+                                        if (response != undefined || response != "" || response.length > 0 ) {
+                                            localStorage.setItem("ctf-username", username);
+                                            window.location.href = "./Challenges.html";
+                                        } else {
+                                            alert(data);
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    </script>
+                    <!--  Bootstrap JS -->
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Outbreak</title>
+    <!-- Url Imports -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <!-- File Imports -->
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            font-family: 'Katibeh', cursive !important;
+            font-size: 1.25rem !important;
+        }
+
+        p {
+            font-family: 'Katibeh', cursive !important;
+        }
+
+        input {
+            background-color: rgba(107, 107, 107, 0.589) !important;
+        }
+
+        a {
+            color: darkgray !important;
+        }
+
+        button {
+            font-family: 'Train One', cursive;
+        }
+    </style>
+</head>
+
+<bodyonload="buttonsUnEditable()">
+    <div class=" navbar-dark text-white">
+        <span id="myspan" class="color_white"></span>
+        <br>
+        <span class="color_white"> Current marks : </span>
+        <span id="usermarks" class="color_white"></span>
+        <div class="container">
+            <nav class="navbar px-0 py-0 navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="home.html" class="pl-md-0 p-3 text-decoration-none text-light">
+                            <h3 class="bold"><span class="color_white">Outbreak</span></h3>
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="home.html" class="p-3 text-decoration-none text-light bold">Home</a>
+                        <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
+                        <a href="hackerboard.html" class="p-3 text-decoration-none text-light bold">Scoreboard</a>
+                        <a href="Marksphp.php" class="p-3 text-decoration-none text-white bold">Challenges</a>
+                        <a href="#" class="p-3 text-decoration-none text-light bold">Logout</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="jumbotron bg-transparent mb-0 pt-0 radius-0">
+        <div class="container">
+            <div class="row">
+            </div>
+            <div class="col hackerFont">
+                <div class="row mt-5">
+                    <div class="col">
+                        <div class="container">
+                            <h1 class="display-1 bold color_white content__title">CHALLENGES<span
+                                    class="vim-caret">&nbsp;</span></h1>
+                            <p class="text-grey text-spacey hackerFont lead mb-5">
+                                Get Ready to Take the Challenge!
+                            </p>
+                            <!-- Text Component Start -->
+                            <h1>
+                                <ul>
+                                    <li> This is the place you will be starting working on the challenges. </li><br><br>
+                                    <li> The list of challenges is given in the right side of this page where you can
+                                        simply enter the flags once you find them. </li><br><br>
+                                    <li> Once you enter the flag into one challenge, it will be checked and show you if
+                                        you have succeeded in finding the
+                                        correct flag or encourage you to retry. </li><br><br>
+                                    <li> Move to the next challenge once you complete the previous one. </li><br><br>
+                                    <li>Eventually, you will be able to find some thrilling information hiding inside
+                                        the hospital online management system
+                                        as you complete the challenges. </li><br><br>
+                                </ul>
+                            </h1>
+                            <!-- Text Component Start -->
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- Card Component Start -->
+                        <div class="mb-3" style="margin-top: 200px;">
+                            <div class="card challenge_01" style="background-color: rgb(53, 53, 53);">
+                                <p id="01" placeholder="1" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_1" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_1"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 01<span class="badge"></span>
+                                    <!-- <span id="lev1" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_1" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-2"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_1_chart"></canvas></div>
+                                        </div>
+                                        <p> This is your first challenge. Good luck!
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level1" type="text" class="form-control" placeholder="Enter Flag"
+                                                aria-label="Enter Flag" aria-describedby="basic-addon2"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p1" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(0)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                        <!-- Card Component Start -->
+                        <div class=" mb-3 ">
+                            <div class="card challenge_02" style="background-color: rgb(53, 53, 53);">
+                                <p id="02" placeholder="2" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_2" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_2"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 02<span class="badge"></span>
+                                    <!-- <span id="lev2" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_2" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-2"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_2_chart"></canvas></div>
+                                        </div>
+                                        <p> Get the new flag!
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level2" type="text" class="form-control" placeholder="Enter Flag"
+                                                aria-label="Enter Flag" aria-describedby="basic-addon2"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p2" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(1)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                        <!-- Card Component Start -->
+                        <div class=" mb-3 ">
+                            <div class="card challenge_03" style="background-color: rgb(53, 53, 53);">
+                                <p id="03" placeholder="3" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_3" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_3"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 03<span class="badge"></span>
+                                    <!-- <span id="lev3" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_3" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-3"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_3_chart"></canvas></div>
+                                        </div>
+                                        <p> Bravo! You have come so far, good job!
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level3" type="text" class="form-control" placeholder="Enter Flag"
+                                                aria-label="Enter Flag" aria-describedby="basic-addon3"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p3" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(2)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                        <!-- Card Component Start -->
+                        <div class="mb-3 ">
+                            <div class="card challenge_04" style="background-color: rgb(53, 53, 53);">
+                                <p id="04" placeholder="4" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_4" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_4"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 04<span class="badge"></span>
+                                    <!-- <span id="lev4" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_4" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-4"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_4_chart"></canvas></div>
+                                        </div>
+                                        <p> Nice! you have accessed the hospital main database!
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level4" type="text" class="form-control" placeholder="Enter Flag"
+                                                aria-label="Enter Flag" aria-describedby="basic-addon4"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p4" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(3)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                        <!-- Card Component Start -->
+                        <div class=" mb-3 ">
+                            <div class="card challenge_05" style="background-color: rgb(53, 53, 53);">
+                                <p id="05" placeholder="5" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_5" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_5"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 05<span class="badge"></span>
+                                    <!-- <span id="lev5" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_5" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-5"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_5_chart"></canvas></div>
+                                        </div>
+                                        <p> Get the Invite Code.
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level5" type="text" class="form-control" placeholder="Enter Flag"
+                                                aria-label="Enter Flag" aria-describedby="basic-addon5"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p5" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(4)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                        <!-- Card Component Start -->
+                        <div class=" mb-3 ">
+                            <div class="card challenge_06" style="background-color: rgb(53, 53, 53);">
+                                <p id="06" placeholder="6" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_6" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_6"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 06<span class="badge"></span>
+                                    <!-- <span id="lev6" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_6" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-6"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_6_chart"></canvas></div>
+                                        </div>
+                                        <p> Get the Invite Code.
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level6" type="text" class="form-control" placeholder="Enter Flag"
+                                                aria-label="Enter Flag" aria-describedby="basic-addon6"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p6" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(5)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                        <!-- Card Component Start -->
+                        <div class=" mb-3 ">
+                            <div class="card challenge_07" style="background-color: rgb(53, 53, 53);">
+                                <p id="07" placeholder="7" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_7" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_7"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 07<span class="badge"></span>
+                                    <!-- <span id="lev7" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_7" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-7"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_7_chart"></canvas></div>
+                                        </div>
+                                        <p> Get the Invite Code.
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level7" type="text" class="form-control" placeholder="Enter Flag"
+                                                aria-label="Enter Flag" aria-describedby="basic-addon7"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p7" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(6)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                        <!-- Card Component Start -->
+                        <div class="mb-3 ">
+                            <div class="card challenge_08" style="background-color: rgb(53, 53, 53);">
+                                <p id="08" placeholder="8" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_8" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_8"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 08<span class="badge"></span>
+                                    <!-- <span id="lev8" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_8" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-8"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_8_chart"></canvas></div>
+                                        </div>
+                                        <p> Get the Invite Code.
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level8" type="text" class="form-control" placeholder="Enter Flag"
+                                                aria-label="Enter Flag" aria-describedby="basic-addon8"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p8" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(7)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                        <!-- Card Component Start -->
+                        <div class="mb-3 ">
+                            <div class="card challenge_09" style="background-color: rgb(53, 53, 53);">
+                                <p id="09" placeholder="9" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_9" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_9"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 09<span class="badge"></span>
+                                    <!-- <span id="lev9" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_9" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-9"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_9_chart"></canvas></div>
+                                        </div>
+                                        <p> Get the Invite Code.
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level9" type="text" class="form-control" placeholder="Enter Flag"
+                                                aria-label="Enter Flag" aria-describedby="basic-addon9"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p9" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(8)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                        <!-- Card Component Start -->
+                        <div class="mb-3 ">
+                            <div class="card challenge_10" style="background-color: rgb(53, 53, 53);">
+                                <p id="10" placeholder="10" hidden>
+                                <p>
+                                <div class="card-header solved" data-target="#problem_id_10" data-toggle="collapse"
+                                    aria-expanded="false" aria-controls="problem_id_10"
+                                    style="background-color: rgb(31, 31, 31);">
+                                    Challenge 10<span class="badge"></span>
+                                    <!-- <span id="lev10" class="badge"></span> -->
+                                </div>
+                                <div id="problem_id_10" class="collapse card-body"
+                                    style="background-color: rgb(53, 53, 53);">
+                                    <blockquote class="card-blockquote">
+                                        <div style="display: flex;">
+                                            <div class="pl-10"><canvas style="width:80px;height:20px"
+                                                    id="problem_id_10_chart"></canvas></div>
+                                        </div>
+                                        <p> Get the Invite Code.
+                                        </p>
+                                        <div class="input-group mt-3">
+                                            <input id="level10" type="text" class="form-control"
+                                                placeholder="Enter Flag" aria-label="Enter Flag"
+                                                aria-describedby="basic-addon10"
+                                                style="background-color: rgb(151, 151, 151);">
+                                            <div class="input-group-append">
+                                                <button id="submit_p10" class="btn btn-outline-light" type="button"
+                                                    onclick="checkFlag(9)">Go!</button>
+                                            </div>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Component End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var challangeid;
+        var flagList = ['flag01', 'flag02', 'flag03', 'flag04', 'flag05', 'flag06', 'flag07', 'flag08', 'flag09', 'flag10'];
+        function checkFlag(challangeid) {
+            var flagInput = document.getElementById('level' + (challangeid + 1)).value;
+            if (flagInput == flagList[challangeid]) {
+            } else {
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const name = localStorage.getItem("ctf-username");
+
+        function buttonsUnEditable() {
+            var url = window.location + '';
+            var data = url.split('?');
+
+            document.getElementById("myspan").innerHTML = data[1];
+            document.getElementById("usermarks").innerHTML = 80;
+
+            document.getElementById("lev1").textContent = 'Success - 80';
+            const button1 = document.getElementById('submit_p1');
+            button1.disabled = true;
+            const button2 = document.getElementById('submit_p2');
+            button2.disabled = true;
+            const button3 = document.getElementById('submit_p3');
+            button3.disabled = true;
+            const button4 = document.getElementById('submit_p4');
+            button4.disabled = true;
+            const button5 = document.getElementById('submit_p5');
+            button5.disabled = true;
+            const button6 = document.getElementById('submit_p6');
+            button6.disabled = true;
+            const button7 = document.getElementById('submit_p7');
+            button7.disabled = true;
+            const button8 = document.getElementById('submit_p8');
+            button8.disabled = true;
+            const button9 = document.getElementById('submit_p9');
+            button9.disabled = true;
+            const button10 = document.getElementById('submit_p10');
+            button10.disabled = true;
+
+            $.ajax({
+                url: "http://backpackerctf.online/savemarks.php",
+                type: "POST",
+                dataType: "text",
+                data: { "question": '1', "mark": '80', "username": data[1] },
+                success: function (data) {
+                    if (data === 'statusCode 200') {
+                    } else {
+                        alert(data);
+                    }
+                }
+            });
+        }
+
+        function checkAnswerTwo() {
+            var answer = document.getElementById("level2").value;
+            var question = document.getElementById("q2").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            if (document.getElementById("level2").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+                        var ou = response;
+                        if (ou != '0') {
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev2").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p2');
+                            button.disabled = true;
+                            const button3 = document.getElementById('submit_p3');
+                            button3.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+                            });
+                        } else {
+                            document.getElementById("lev2").textContent = "Fail";
+                        }
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+            }
+        }
+        function checkAnswerThree() {
+            var answer = document.getElementById("level3").value;
+            var question = document.getElementById("q3").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            if (document.getElementById("level3").value === '') {
+                alert('Please enter Value');
+            } else {
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+                        var ou = response;
+                        if (ou != '0') {
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev3").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p3');
+                            button.disabled = true;
+                            const button4 = document.getElementById('submit_p4');
+                            button4.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+                            });
+                        } else {
+                            document.getElementById("lev3").textContent = "Fail";
+                        }
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+            }
+        }
+        function checkAnswerFour() {
+            var answer = document.getElementById("level4").value;
+            var question = document.getElementById("q4").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+            if (document.getElementById("level4").value === '') {
+                alert('Please enter Value');
+            } else {
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+                        var ou = response;
+                        if (ou != '0') {
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev4").textContent = "Success - " + ou;
+                            const button = document.getElementById('submit_p4');
+                            button.disabled = true;
+                            const button5 = document.getElementById('submit_p5');
+                            button5.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+                            });
+                        } else {
+                            document.getElementById("lev4").textContent = "Fail";
+                        }
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+            }
+        }
+        function checkAnswerFive() {
+            var answer = document.getElementById("level5").value;
+            var question = document.getElementById("q5").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+            if (document.getElementById("level5").value === '') {
+                alert('Please enter Value');
+            } else {
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+                        var ou = response;
+                        if (ou != '0') {
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev5").textContent = "Success - " + ou;
+                            const button = document.getElementById('submit_p5');
+                            button.disabled = true;
+                            const button6 = document.getElementById('submit_p6');
+                            button6.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+                            });
+                        } else {
+                            document.getElementById("lev5").textContent = "Fail";
+                        }
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+            }
+        }
+        function checkAnswerSix() {
+            var answer = document.getElementById("level6").value;
+            var question = document.getElementById("q6").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+            if (document.getElementById("level6").value === '') {
+                alert('Please enter Value');
+            } else {
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+                        var ou = response;
+                        if (ou != '0') {
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev6").textContent = "Success - " + ou;
+                            const button = document.getElementById('submit_p6');
+                            button.disabled = true;
+                            const button7 = document.getElementById('submit_p7');
+                            button7.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+                            });
+                        } else {
+                            document.getElementById("lev6").textContent = "Fail";
+                        }
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+            }
+        }
+        function checkAnswerSeven() {
+            var answer = document.getElementById("level7").value;
+            var question = document.getElementById("q7").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level7").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev7").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p7');
+                            button.disabled = true;
+                            const button8 = document.getElementById('submit_p8');
+                            button8.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev7").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerEight() {
+            var answer = document.getElementById("level8").value;
+            var question = document.getElementById("q8").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level8").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev8").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p8');
+                            button.disabled = true;
+                            const button9 = document.getElementById('submit_p9');
+                            button9.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev8").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerNine() {
+            var answer = document.getElementById("level9").value;
+            var question = document.getElementById("q9").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level9").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev9").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p9');
+                            button.disabled = true;
+                            const button10 = document.getElementById('submit_p10');
+                            button10.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev9").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerTen() {
+            var answer = document.getElementById("level10").value;
+            var question = document.getElementById("q10").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level10").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev10").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p10');
+                            button.disabled = true;
+                            const button11 = document.getElementById('submit_p11');
+                            button11.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev10").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerEleven() {
+            var answer = document.getElementById("level11").value;
+            var question = document.getElementById("q11").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level11").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev11").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p11');
+                            button.disabled = true;
+                            const button12 = document.getElementById('submit_p12');
+                            button12.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev11").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerTwelve() {
+            var answer = document.getElementById("level12").value;
+            var question = document.getElementById("q12").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level12").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev12").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p12');
+                            button.disabled = true;
+                            const button13 = document.getElementById('submit_p13');
+                            button13.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev12").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerThirteen() {
+            var answer = document.getElementById("level13").value;
+            var question = document.getElementById("q13").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level13").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev13").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p13');
+                            button.disabled = true;
+                            const button14 = document.getElementById('submit_p14');
+                            button14.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev13").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerFourteen() {
+            var answer = document.getElementById("level14").value;
+            var question = document.getElementById("q14").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level14").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev14").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p14');
+                            button.disabled = true;
+                            const button15 = document.getElementById('submit_p15');
+                            button15.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev14").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerFifteen() {
+            var answer = document.getElementById("level15").value;
+            var question = document.getElementById("q15").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level15").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev15").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p15');
+                            button.disabled = true;
+                            const button16 = document.getElementById('submit_p16');
+                            button16.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev15").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerSixteen() {
+            var answer = document.getElementById("level16").value;
+            var question = document.getElementById("q16").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level16").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev16").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p16');
+                            button.disabled = true;
+                            const button17 = document.getElementById('submit_p17');
+                            button17.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev16").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerSeventeen() {
+            var answer = document.getElementById("level17").value;
+            var question = document.getElementById("q17").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level17").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev17").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p17');
+                            button.disabled = true;
+                            const button18 = document.getElementById('submit_p18');
+                            button18.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev17").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerEighteen() {
+            var answer = document.getElementById("level18").value;
+            var question = document.getElementById("q18").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level18").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev18").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p18');
+                            button.disabled = true;
+                            const button19 = document.getElementById('submit_p19');
+                            button19.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev18").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerNineteen() {
+            var answer = document.getElementById("level19").value;
+            var question = document.getElementById("q19").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level19").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev19").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p19');
+                            button.disabled = true;
+                            const button20 = document.getElementById('submit_p20');
+                            button20.disabled = false;
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev19").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+        function checkAnswerTwenty() {
+            var answer = document.getElementById("level20").value;
+            var question = document.getElementById("q20").textContent;
+            var username = document.getElementById("myspan").innerHTML;
+
+            //alert(answer);
+            if (document.getElementById("level20").value === '') {
+                alert('Please enter Value');
+            } else {
+
+                $.ajax({
+                    url: "http://backpackerctf.online/Indexphp.php",
+                    type: "POST",
+                    dataType: "text",
+                    data: { "question": question, "answer": answer, "username": username },
+                    success: function (response) {
+
+                        var ou = response;
+                        //alert(ou);
+                        if (ou != '0') {
+                            //alert('a');
+
+                            var currentmarks = document.getElementById("usermarks").innerHTML;
+                            document.getElementById("usermarks").innerHTML = parseInt(currentmarks) + parseInt(ou);
+                            document.getElementById("lev20").textContent = "Success - " + ou;
+
+                            const button = document.getElementById('submit_p20');
+                            button.disabled = true;
+                            location.replace("http://backpackerctf.online/Congrats.html");
+                            var mark = document.getElementById("usermarks").innerHTML;
+                            $.ajax({
+                                url: "http://backpackerctf.online/savemarks.php",
+                                type: "POST",
+                                dataType: "text",
+                                data: { "question": question, "mark": mark, "username": username },
+                                success: function (data) {
+                                    if (data === 'statusCode 200') {
+
+
+                                    } else {
+                                        alert(data);
+                                    }
+                                }
+
+                            });
+
+                        } else {
+                            document.getElementById("lev20").textContent = "Fail";
+                        }
+
+                    },
+                    error: function () {
+                        alert("fail");
+                    }
+                });
+
+            }
+        }
+                    //function checkAnswerTwenty(){
+                        //var answer=document.getElementById("level20").value;
+                        //var question=document.getElementById("q20").textContent;
+                        //var username = document.getElementById("myspan").innerHTML;
+                        //alert(question);
+                        //if(document.getElementById("level20").value===''){
+                            //alert('Please enter Value');
+                        //} else{     
+
+                                //$.ajax({
+                                    //url:"http://backpackerctf.online/Indexphp.php",
+                                    //type : "POST",
+                                    //dataType : "text",															
+                                    //data: {"question" : question, "answer" : answer, "output":""},															
+                                    //success:function(response)
+                                    //{
+                                        //alert(data.output);
+                                        //var ou = response;
+                                        //if(ou.includes('Success')){
+                                             //document.getElementById("lev20").textContent = ou;
+                                             //const button = document.getElementById('submit_p20');
+                                             //button.disabled = true;
+                                             //location.replace("http://backpackerctf.online/Congrats.html");
+                                                //}else{
+                                                //document.getElementById("lev20").textContent = ou;
+                                             //}
+                                    //}								
+                                //}); 
+
+                        //}
+                    //}
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    </body>
+
+</html>

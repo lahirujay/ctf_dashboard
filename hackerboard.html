@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Outbreak</title>
+    <!-- Url Imports -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <!-- File Imports -->
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+
+        /* body {
+            background: black url("./images/Background_Home.png") no-repeat fixed center;
+        } */
+
+        h1 {
+            font-family: 'Monoton', cursive !important;
+            font-weight: lighter !important;
+        }
+
+        p {
+            font-family: 'Katibeh', cursive !important;
+        }
+
+        input {
+            background-color: rgba(107, 107, 107, 0.589) !important;
+        }
+
+        a {
+            color: darkgray !important;
+        }
+
+        button {
+            font-family: 'Train One', cursive;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-dark text-white">
+        <div class="container">
+            <nav class="navbar px-0 navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a href="home.html" class="pl-md-0 p-3 text-decoration-none text-light">
+                            <h3 class="bold"><span class="color_white">Outbreak</span></h3>
+                        </a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="home.html" class="p-3 text-decoration-none text-light bold">Home</a>
+                        <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
+                        <a href="hackerboard.html" class="p-3 text-decoration-none text-white bold">Scoreboard</a>
+                        <a href="Challenges.html" class="p-3 text-decoration-none text-light bold">Challenges</a>
+                        <a href="login.html" class="p-3 text-decoration-none text-light bold">Logout</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <h1 class="display-1 bold color_white content__title text-center">SCOREBOARD</h1>
+                    <p class="text-grey lead text-spacey text-center hackerFont">
+                        Where the universe is graded!
+                    </p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <!-- <div id="chartContainer" style="height: 370px; width: 100%;"></div> -->
+
+                <canvas id="myChart" style="width:100%;"></canvas>
+            </div>
+            <div class="row mt-5">
+                <table class="table table-striped table-hover bg-dark rounded">
+                    <thead style="font-size: 25px;">
+                        <tr>
+                            <th scope="col">Challange</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Score</th>
+                        </tr>
+                    </thead>
+                    <tbody style="font-size: 18px;">
+                        <tr>
+                            <td>Challange 01</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Challange 02</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Challange 03</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Challange 04</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Challange 05</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Challange 06</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Challange 07</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Challange 08</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Challange 09</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr>
+                            <td>Challange 10</td>
+                            <td>Not Completed</td>
+                            <td>Not Completed</td>
+                        </tr>
+                        <tr style="font-size: 20px; font-weight: bold;">
+                            <td colspan="2">Total Score</td>
+                            <td>Not Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script>
+        var pOne, pTwo, pThree, pFour, pFive;
+        pOne = 0;
+        pTwo = 50;
+        pThree = 60;
+        pFour = 80;
+        pFive = 100;
+        var xValues = ["Participant One", "Participant Two", "Participant Three", "Participant Four", "Participant Five"];
+        var yValues = [pOne, pTwo, pThree, pFour, pFive];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+            }
+        });
+    </script>
+</body>
+
+</html>
