@@ -4,14 +4,16 @@ include_once '../config.php';
 if($conn)
 {
 
-    $check = "SELECT user,SUM(points) AS 'total' FROM challenges GROUP BY user ORDER BY total DESC LIMIT 5";
+    $username = $_POST['username'];
+
+    $check = "SELECT user,challenge,points FROM challenges WHERE user = '$username'";
     
     if($result = mysqli_query($conn, $check))
     {
         if (mysqli_num_rows($result)) {
 
             while($row = mysqli_fetch_array($result)) {
-                $array[] = array("user"=>$row["user"],"total"=>$row["total"]);
+                $array[] = array("user"=>$row["user"],"challenge"=>$row["challenge"],"points"=>$row["points"]);
             }
             echo json_encode($array);
         } else {

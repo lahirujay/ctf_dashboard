@@ -130,7 +130,7 @@
                                         response = JSON.parse(data).username
                                         if (response != undefined || response != "" || response.length > 0 ) {
                                             localStorage.setItem("ctf-username", username);
-                                            window.location.href = "./Challenges.html";
+                                            window.location.href = "./login.html";
                                         } else {
                                             alert(data);
                                         }

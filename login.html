@@ -115,9 +115,9 @@
                         dataType: "Text",
                         data: { "username": username, "password": password },
                         success: function (data) {
-                            response = JSON.parse(data).username
+                            response = JSON.parse(data).username;
+                            sessionStorage.setItem("ctf-username", username);
                             if (response != undefined || response != "" || response.length > 0 ) {
-                                localStorage.setItem("ctf-username", username);
                                 window.location.href = "./Challenges.html";
                             } else {
                                 alert(data);
