@@ -64,7 +64,7 @@
                         <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
                         <a href="hackerboard.html" class="p-3 text-decoration-none text-white bold">Scoreboard</a>
                         <a href="Challenges.html" class="p-3 text-decoration-none text-light bold">Challenges</a>
-                        <a href="login.html" class="p-3 text-decoration-none text-light bold">Logout</a>
+                        <a onclick="logoutOnclickHandler()" class="p-3 text-decoration-none text-light bold">Logout</a>
                     </div>
                 </div>
             </nav>
@@ -104,6 +104,12 @@
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script>
+
+        function logoutOnclickHandler() {
+            sessionStorage.removeItem("ctf-username");
+            window.location.href = "./login.html";
+        }
+
         var username = sessionStorage.getItem("ctf-username");
 
         if (username == null || username == undefined) {

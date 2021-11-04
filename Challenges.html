@@ -68,8 +68,8 @@
                         <a href="home.html" class="p-3 text-decoration-none text-light bold">Home</a>
                         <a href="about.html" class="p-3 text-decoration-none text-light bold">About</a>
                         <a href="hackerboard.html" class="p-3 text-decoration-none text-light bold">Scoreboard</a>
-                        <a href="Marksphp.php" class="p-3 text-decoration-none text-white bold">Challenges</a>
-                        <a href="#" class="p-3 text-decoration-none text-light bold">Logout</a>
+                        <a href="Challenges.html" class="p-3 text-decoration-none text-white bold">Challenges</a>
+                        <a onclick="logoutOnclickHandler()" class="p-3 text-decoration-none text-light bold">Logout</a>
                     </div>
                 </div>
             </nav>
@@ -479,8 +479,10 @@
             }
         }
 
-
-
+        function logoutOnclickHandler() {
+            sessionStorage.removeItem("ctf-username");
+            window.location.href = "./login.html";
+        }
 
         const name = localStorage.getItem("ctf-username");
 
